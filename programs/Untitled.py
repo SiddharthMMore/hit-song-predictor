@@ -39,19 +39,19 @@ for year in years:
 # In[13]:
 
 
-test1.head()
+print(test1.head())
 
 
 # In[14]:
 
 
-test1.tail()
+print(test1.tail())
 
 
 # In[15]:
 
 
-test1.shape
+print(test1.shape)
 
 
 # In[18]:
@@ -122,7 +122,6 @@ temp1 = list()
 from tqdm import tqdm_notebook
 for i in tqdm_notebook(range(0,1000)):
     uri = get_spotify_uri(titles[i], artists[i])
-    
     if uri != 0:
         temp1.append(uri)
     else:
@@ -134,13 +133,13 @@ spotify_uri = spotify_uri + temp1
 # In[32]:
 
 
-temp1
+print(temp1)
 
 
 # In[34]:
 
 
-len(temp1)
+print(len(temp1))
 
 
 # In[35]:
@@ -163,7 +162,7 @@ songs_with_id=songs_with_id[songs_with_id.URI!=0]
 # In[38]:
 
 
-songs_with_id.shape
+print(songs_with_id.shape)
 
 
 # In[39]:
@@ -210,11 +209,9 @@ def get_audio_features(uri):
         valence_list.append(np.nan)
         tempo_list.append(np.nan)
         duration_list.append(np.nan)
-        time_signature_list.append(np.nan) 
+        time_signature_list.append(np.nan)
         return ('Error on: ' + str(uri))
-    
     search_list = search[0]
-    
     danceability_list.append(search_list['danceability'])
     energy_list.append(search_list['energy'])
     key_list.append(search_list['key'])
