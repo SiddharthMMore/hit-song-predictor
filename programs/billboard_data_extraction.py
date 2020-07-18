@@ -3,30 +3,24 @@
 
 # In[2]:
 
-
 import pandas as pd
 import numpy as np
 
-
 # In[4]:
 
-
+# Create a panda table with three colums
 billboard_data1= pd.DataFrame(columns=['Title', 'Artist', 'Year'])
 
-
 # In[5]:
-
-
+# List of years for which hit songs lists will be obtained
 years = [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011,2014, 2015, 2016, 2017, 2018]
+# Appending year to url_template we get the hit song data from wikipedia
 url_template = 'https://en.wikipedia.org/wiki/Billboard_Year-End_Hot_100_singles_of_'
-
 
 # In[15]:
 
-
 url = 'https://en.wikipedia.org/wiki/Billboard_Year-End_Hot_100_singles_of_2000'
 temp_df = pd.read_html(url, header=0)[0]
-
 
 # In[16]:
 
